@@ -42,14 +42,13 @@ void stampa_mat(const matrice mat,const int rig,const int col){
 float media_vet(const vettore vet,const int riemp){
 	
 	//DICHIARAZIONI
-	int i=0,somma=0;
-	float media=0;
+	int i=0,somma=0,media=0;
 	
 	//CALCOLO SOMMA TOTALE E MEDIA FINALE
 	for(i=0;i<riemp;i++){
 		somma = somma+vet[i];
     }
-	media=somma/riemp;
+	media=float(somma/riemp);
 	
 	return media;
 }
@@ -61,7 +60,7 @@ void crea_vet_bool(const int rig,const int col, const matrice mat, vett_bool vet
 	
 	//COSTRUZIONE VETTORE BOOLEANI IN BASE ALLA CONDIZIONE DELLA TRACCIA
 	for(i=0;i<rig;i++){
-		if( ( (media_vet(mat[i],rig)) / (mat[i][0]) ) > 0){
+		if( (media_vet(mat[i],rig)>0 && (mat[i][0]) > 0){
 			vet[i]=true;
 		}else{
 			vet[i]=false;
